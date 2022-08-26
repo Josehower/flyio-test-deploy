@@ -6,3 +6,4 @@
    - [login in the flyctl](https://fly.io/docs/getting-started/log-in-to-fly/)
    - get the token with `flyctl auth token`
    - Add The secret to github under the name `FLY_API_TOKEN` https://github.com/<username>/<project-slug>/settings/secrets/actions/new
+   -
