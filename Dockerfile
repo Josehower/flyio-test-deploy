@@ -16,6 +16,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 # Example:
 # ARG NEXT_PUBLIC_EXAMPLE="value here"
 
+RUN yarn migrate up
 RUN yarn build
 
 # If using npm comment out above and use below instead

@@ -9,3 +9,7 @@
    - only for the first time you need to deploy with `flyctl launch --remote-only`
    - create a.github/workflows/fly.yml and add the workflow in this repo
    - update the app and push
+3. postgres setup
+   - create a postgres app using `flyctl postgres create`
+   - atach one app to pstgres app https://fly.io/docs/reference/postgres/#attaching-an-app-to-a-postgres-app
+     `flyctl postgres attach --app test-deploy-fly postgres-test-database`
