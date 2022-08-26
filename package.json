@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "migrate": "dotenv ley",
+    "fly-database-connect": "",
     "lint": "next lint"
   },
   "dependencies": {
