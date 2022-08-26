@@ -6,6 +6,7 @@ export default function Home() {
       <div className={styles.container}>This is an egg two times bigger</div>
       <div className={styles.container}>This is an egg thre times bigger</div>
       <div className={styles.container}>This is an cookie for you</div>
+      <div className={styles.container}>This is a new change</div>
     </>
   );
 }
