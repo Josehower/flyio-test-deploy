@@ -1,13 +1,9 @@
-# fly.toml file generated for flyio-test-deploy on 2022-08-26T15:07:42+02:00
+# fly.toml file generated for flyio-test-deploy on 2022-08-26T15:51:36+02:00
 
 app = "flyio-test-deploy"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
-
-[build]
-  [build.args]
-    NEXT_PUBLIC_EXAMPLE = "Value goes here"
 
 [env]
   PORT = "8080"
