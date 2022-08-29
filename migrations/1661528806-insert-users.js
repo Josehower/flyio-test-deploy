@@ -5,6 +5,9 @@ const users = [
   { username: 'Polly', color: 'red' },
   { username: 'Rebecca', color: 'pink' },
   { username: 'Harry', color: 'red' },
+  { username: 'Lulu', color: 'red' },
+  { username: 'Sandy', color: 'red' },
+  { username: 'Morris', color: 'red' },
 ];
 
 exports.up = async (sql) => {

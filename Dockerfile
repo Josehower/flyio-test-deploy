@@ -16,7 +16,6 @@ ENV NEXT_TELEMETRY_DISABLED 1
 # Example:
 # ARG NEXT_PUBLIC_EXAMPLE="value here"
 
-RUN yarn migrate up
 RUN yarn build
 
 # If using npm comment out above and use below instead
@@ -29,12 +28,10 @@ WORKDIR /app
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+RUN apk add postgresql
 
 COPY --from=builder /app ./
 
-USER nextjs
 
 ENV PORT 3000
 

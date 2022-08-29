@@ -7,9 +7,9 @@ module.exports = function setPostgresDefaultsOnHeroku() {
     const { host, database, user, password } = parse(process.env.DATABASE_URL);
 
     // Set standard environment variables
-    process.env.PGHOST = host;
-    process.env.PGDATABASE = database;
-    process.env.PGUSERNAME = user;
-    process.env.PGPASSWORD = password;
+    // process.env.PGHOST = host;
+    // process.env.PGDATABASE = database;
+    // process.env.PGUSERNAME = user;
+    // process.env.PGPASSWORD = password;
   }
 };
