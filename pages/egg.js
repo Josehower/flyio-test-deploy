@@ -1,5 +1,4 @@
 import styles from '../styles/Home.module.css';
-import { getUsers } from '../utils/users';
 
 export default function Home(props) {
   return (

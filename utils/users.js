@@ -1,6 +1,5 @@
+import { parse } from 'pg-connection-string';
 import postgres from 'postgres';
-
-const { parse } = require('pg-connection-string');
 
 // Connect only once to the database
 // https://github.com/vercel/next.js/issues/7811#issuecomment-715259370
