@@ -13,7 +13,7 @@
 
    - `flyctl ssh console`
 
-   - and create a postgres volume with the flyctl
+   - and create a postgres volume with the `flyctl volumes create postgres --size 1`
    - update the fly.toml to mount the volume and link it to an specyfic path
    - add postgres to `Dockerfile` pipeline
 
@@ -21,8 +21,29 @@
    - stablish and ssh connection and run the following commands
 
 ```sh
-mkdir /<volume-path>/run/postgresql
-chown postgres:postgres /<volume-path>/run/postgresql
+mkdir -p /postgres-volume/run/postgresql
+su postgres -
+chown postgres:postgres /postgres-volume/var
+chown postgres:postgres /postgres-volume/run/postgresql
+chown postgres:postgres  /postgres-volume/var/lib/postgresql/data
+chmod 0700 /postgres-volume/var/lib/postgresql/data
+UPDATE the config to have the right location
+
+echo "host all all 0.0.0.0/0 md5" >> /postgres-volume/var/lib/postgresql/data/pg_hba.conf
+echo "listen_addresses='*'" >> /postgres-volume/var/lib/postgresql/data/postgresql.conf
+```
+
+<!--
+ check if this are needed
+initdb -D /postgres-volume/var/lib/postgresql/data
+vi /postgres-volume/var/lib/postgresql/data/postgresql.conf
+ psql -h /postgres-volume/run/postgresql
+
+ -->
+
+```sh
+mkdir -p /<volume-path>/run/postgresql
+chown postgres:postgres /<volume-path>/run/postgresql   # check this please
 su postgres -
 mkdir -p /<volume-path>/var/lib/postgresql/data
 chmod 0700 /<volume-path>/var/lib/postgresql/data
@@ -34,7 +55,7 @@ echo "listen_addresses='*'" >> /<volume-path>/var/lib/postgresql/data/postgresql
 - initialize the database
 
 ```
-su postgres -c 'pg_ctl start -D /<volume-path>/var/lib/postgresql/data'
+su postgres -c 'pg_ctl start -D /postgres-volume/var/lib/postgresql/data'
 ```
 
 - setup database as usual but using secure data and test the deployed database with
