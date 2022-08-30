@@ -1,7 +1,4 @@
-import { config } from 'dotenv-safe';
 import postgres from 'postgres';
-
-config();
 
 // Connect only once to the database
 // https://github.com/vercel/next.js/issues/7811#issuecomment-715259370

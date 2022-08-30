@@ -13,7 +13,6 @@
     "check": "pg_ctl start -D /postgres-volume/var/lib/postgresql/data && yarn migrate up"
   },
   "dependencies": {
-    "dotenv-safe": "^8.2.0",
     "next": "12.2.5",
     "pg-connection-string": "^2.5.0",
     "postgres": "^3.2.4",
