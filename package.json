@@ -10,7 +10,7 @@
     "migrate": "dotenv ley",
     "fly-database-connect": "",
     "lint": "next lint",
-    "check": "yarn migrate up && yarn start"
+    "prestartcheck": "yarn migrate up && yarn start"
   },
   "dependencies": {
     "next": "12.2.5",
