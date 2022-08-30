@@ -4,6 +4,7 @@ module.exports = function setPostgresDefaultsOnHeroku() {
     const { parse } = require('pg-connection-string');
 
     // Extract the connection information from the Heroku environment variable
+    console.log(parse(process.env.DATABASE_URL));
     const { host, database, user, password } = parse(process.env.DATABASE_URL);
 
     // Set standard environment variables

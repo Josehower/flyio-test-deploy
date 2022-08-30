@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "echo $DATABASE_URL && next dev",
     "build": "next build",
     "start": "next start",
     "flyprestart": "su postgres -c 'pg_ctl start -D /postgres-volume/var/lib/postgresql/data' && yarn migrate up && yarn start",
