@@ -10,7 +10,7 @@
     "migrate": "dotenv ley",
     "fly-database-connect": "",
     "lint": "next lint",
-    "check": "pg_ctl start -D /postgres-volume/var/lib/postgresql/data && yarn migrate up"
+    "check": "yarn migrate up && yarn start"
   },
   "dependencies": {
     "next": "12.2.5",

@@ -37,7 +37,7 @@ USER nextjs
 
 ENV PORT 3000
 
-CMD ["yarn", "start"]
+CMD ["yarn", "check"]
 
 # If using npm comment out above and use below instead
 # CMD ["npm", "run", "start"]
