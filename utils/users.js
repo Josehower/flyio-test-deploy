@@ -1,4 +1,3 @@
-import { parse } from 'pg-connection-string';
 import postgres from 'postgres';
 
 // Connect only once to the database
@@ -22,7 +21,6 @@ function connectOneTimeToDatabase() {
 }
 
 // Connect to PostgreSQL
-console.log('here', parse(process.env.DATABASE_URL));
 const sql = connectOneTimeToDatabase();
 
 export async function getUsers() {
